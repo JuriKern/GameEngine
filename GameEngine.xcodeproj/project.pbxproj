@@ -76,8 +76,7 @@
 				CBDBB0871C31995600DCDCAC /* window.h */,
 				CBDBB0881C319A2400DCDCAC /* window.cpp */,
 			);
-			name = GameEngine;
-			path = GameTutorial;
+			path = GameEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
