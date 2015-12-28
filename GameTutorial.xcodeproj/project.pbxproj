@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CB18565C1C319435000F882B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB18565B1C319435000F882B /* main.cpp */; };
+		CB1856651C3195E7000F882B /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1856621C3195E7000F882B /* SDL2_image.framework */; };
+		CB1856661C3195E7000F882B /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1856631C3195E7000F882B /* SDL2_ttf.framework */; };
+		CB1856671C3195E7000F882B /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1856641C3195E7000F882B /* SDL2.framework */; };
+		CBDBB0891C319A2400DCDCAC /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBDBB0881C319A2400DCDCAC /* window.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,11 @@
 /* Begin PBXFileReference section */
 		CB1856581C319435000F882B /* GameTutorial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameTutorial; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB18565B1C319435000F882B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CB1856621C3195E7000F882B /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		CB1856631C3195E7000F882B /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		CB1856641C3195E7000F882B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		CBDBB0871C31995600DCDCAC /* window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		CBDBB0881C319A2400DCDCAC /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1856671C3195E7000F882B /* SDL2.framework in Frameworks */,
+				CB1856651C3195E7000F882B /* SDL2_image.framework in Frameworks */,
+				CB1856661C3195E7000F882B /* SDL2_ttf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +53,9 @@
 		CB18564F1C319435000F882B = {
 			isa = PBXGroup;
 			children = (
+				CB1856621C3195E7000F882B /* SDL2_image.framework */,
+				CB1856631C3195E7000F882B /* SDL2_ttf.framework */,
+				CB1856641C3195E7000F882B /* SDL2.framework */,
 				CB18565A1C319435000F882B /* GameTutorial */,
 				CB1856591C319435000F882B /* Products */,
 			);
@@ -58,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				CB18565B1C319435000F882B /* main.cpp */,
+				CBDBB0871C31995600DCDCAC /* window.h */,
+				CBDBB0881C319A2400DCDCAC /* window.cpp */,
 			);
 			path = GameTutorial;
 			sourceTree = "<group>";
@@ -119,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB18565C1C319435000F882B /* main.cpp in Sources */,
+				CBDBB0891C319A2400DCDCAC /* window.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +225,10 @@
 		CB1856601C319435000F882B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +236,10 @@
 		CB1856611C319435000F882B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -237,6 +263,7 @@
 				CB1856611C319435000F882B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
