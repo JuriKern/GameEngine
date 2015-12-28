@@ -4,6 +4,8 @@ Window::Window(string n, int w, int h) : mName(n), mWidth(w), mHeight(h), mWindo
 
 Window::~Window()
 {
+    delete mBackground;
+    
     SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
     IMG_Quit();
@@ -50,8 +52,20 @@ void Window::Loop()
         
         SDL_SetRenderDrawColor(mRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(mRenderer);
+        mBackground->Render(0, 0);
         SDL_RenderPresent(mRenderer);
     }
+}
+
+bool Window::LoadBackground()
+{
+    mBackground = new Texture::Background;
+    mBackground->SetRenderer(mRenderer);
+    
+    if (!mBackground->Init())
+        return false;
+    
+    return true;
 }
 
 string Window::GetName() const

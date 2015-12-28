@@ -4,6 +4,7 @@
 #include <SDL2_image/SDL_image.h>
 
 #include <string>
+#include "background.h"
 
 using std::string;
 
@@ -16,6 +17,8 @@ public:
     bool Init();
     void Loop();
     
+    bool LoadBackground();
+    
     string GetName() const;
     int GetWidth() const;
     int GetHeight() const;
@@ -26,4 +29,6 @@ private:
     
     SDL_Window* mWindow;
     SDL_Renderer* mRenderer;
+    
+    Texture::Background* mBackground;
 };
