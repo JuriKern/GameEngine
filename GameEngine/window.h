@@ -19,17 +19,17 @@ using std::string;
 class Window
 {
 public:
-    static Window* GetInstance();
+    static Window& GetInstance();
     
     bool Init();
     void Loop();
+    void Free();
     
     bool LoadBackground();
     
     ~Window();
 protected:
     Window();
-    void free();
     
 private:
     const string* mName;
@@ -40,6 +40,4 @@ private:
     SDL_Renderer* mRenderer;
     
     Texture::Background* mBackground;
-    
-    static Window* _instance;
 };

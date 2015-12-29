@@ -1,16 +1,12 @@
 #include "window.h"
 
-Window* Window::_instance = nullptr;
-
-Window* Window::GetInstance()
+Window& Window::GetInstance()
 {
-    if (Window::_instance == nullptr)
-        Window::_instance = new Window;
-    
-    return Window::_instance;
+    static Window _instance;
+    return _instance;
 }
 
-void Window::free()
+void Window::Free()
 {
     delete mBackground;
 
@@ -22,10 +18,7 @@ void Window::free()
 
 Window::Window() : mName(&WINDOW_NAME), mWidth(&SCREEN_WIDTH), mHeight(&SCREEN_HEIGHT), mWindow(nullptr) {}
 
-Window::~Window()
-{
-    free();
-}
+Window::~Window() {}
 
 bool Window::Init()
 {

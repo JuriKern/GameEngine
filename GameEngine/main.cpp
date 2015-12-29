@@ -2,17 +2,17 @@
 
 int main()
 {    
-    Window* window = Window::GetInstance();
+    Window& window = Window::GetInstance();
     
-    if (window->Init())
+    if (window.Init())
     {
-        if (window->LoadBackground())
+        if (window.LoadBackground())
         {
-            window->Loop();
+            window.Loop();
         }
     }
     
-    delete window;
+    window.Free();
     
     return 0;
 }
