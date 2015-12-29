@@ -1,5 +1,13 @@
 #pragma once
 
+#include <string>
+
+using std::string;
+
+const int SCREEN_WIDTH = 1280;
+const int SCREEN_HEIGHT = 960;
+const string WINDOW_NAME = "Game 1280x960";
+
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
 
@@ -11,24 +19,27 @@ using std::string;
 class Window
 {
 public:
-    Window(string n, int m, int h);
-    ~Window();
+    static Window* GetInstance();
     
     bool Init();
     void Loop();
     
     bool LoadBackground();
     
-    string GetName() const;
-    int GetWidth() const;
-    int GetHeight() const;
+    ~Window();
+protected:
+    Window();
+    void free();
+    
 private:
-    const string mName;
-    const int mWidth;
-    const int mHeight;
+    const string* mName;
+    const int* mWidth;
+    const int* mHeight;
     
     SDL_Window* mWindow;
     SDL_Renderer* mRenderer;
     
     Texture::Background* mBackground;
+    
+    static Window* _instance;
 };

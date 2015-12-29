@@ -2,7 +2,7 @@
 
 int main()
 {    
-    Window* window = new Window("Game 1280x960", 1280, 960);
+    Window* window = Window::GetInstance();
     
     if (window->Init())
     {

@@ -7,10 +7,10 @@ using std::string;
 Background::Background() : mWidth(0), mHeight(0), mTexture(nullptr) {}
 Background::~Background()
 {
-    Free();
+    free();
 }
 
-void Background::Free()
+void Background::free()
 {
     SDL_DestroyTexture(mTexture);
     mWidth = 0;
@@ -25,7 +25,7 @@ void Background::SetRenderer(SDL_Renderer* r)
 
 bool Background::Init()
 {
-    Free();
+    free();
     
     SDL_Texture* newTexture = nullptr;
     string path = "Images/bg.png";

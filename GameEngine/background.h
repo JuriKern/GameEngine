@@ -11,7 +11,6 @@ namespace Texture
         Background();
         ~Background();
         
-        void Free();
         void SetRenderer(SDL_Renderer* r);
         
         bool Init();
@@ -19,6 +18,9 @@ namespace Texture
         
         int GetWidth() const;
         int GetHeight() const;
+    protected:
+        void free();
+        
     private:
         SDL_Texture* mTexture;
         SDL_Renderer* mRenderer;

@@ -1,15 +1,30 @@
 #include "window.h"
 
-Window::Window(string n, int w, int h) : mName(n), mWidth(w), mHeight(h), mWindow(nullptr) {}
+Window* Window::_instance = nullptr;
 
-Window::~Window()
+Window* Window::GetInstance()
+{
+    if (Window::_instance == nullptr)
+        Window::_instance = new Window;
+    
+    return Window::_instance;
+}
+
+void Window::free()
 {
     delete mBackground;
-    
+
     SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
     IMG_Quit();
     SDL_Quit();
+}
+
+Window::Window() : mName(&WINDOW_NAME), mWidth(&SCREEN_WIDTH), mHeight(&SCREEN_HEIGHT), mWindow(nullptr) {}
+
+Window::~Window()
+{
+    free();
 }
 
 bool Window::Init()
@@ -18,7 +33,7 @@ bool Window::Init()
         return false;
     
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
-    mWindow = SDL_CreateWindow(GetName().c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, GetWidth(), GetHeight(), SDL_WINDOW_SHOWN);
+    mWindow = SDL_CreateWindow(mName->c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, *mWidth, *mHeight, SDL_WINDOW_SHOWN);
     
     if (mWindow == nullptr)
         return false;
@@ -66,21 +81,6 @@ bool Window::LoadBackground()
         return false;
     
     return true;
-}
-
-string Window::GetName() const
-{
-    return mName;
-}
-
-int Window::GetWidth() const
-{
-    return mWidth;
-}
-
-int Window::GetHeight() const
-{
-    return mHeight;
 }
 
 
