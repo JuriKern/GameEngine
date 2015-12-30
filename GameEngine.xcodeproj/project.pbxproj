@@ -12,6 +12,7 @@
 		CB1856661C3195E7000F882B /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1856631C3195E7000F882B /* SDL2_ttf.framework */; };
 		CB1856671C3195E7000F882B /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1856641C3195E7000F882B /* SDL2.framework */; };
 		CB3131C41C31D9FC0029B45D /* bg.png in Copy Files */ = {isa = PBXBuildFile; fileRef = CB649F7A1C31D5E7004395D4 /* bg.png */; };
+		CB5EA8301C33FA1300FDA0CA /* base_texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB5EA82F1C33FA1300FDA0CA /* base_texture.cpp */; };
 		CB649F781C31D011004395D4 /* background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB649F761C31D011004395D4 /* background.cpp */; };
 		CBDBB0891C319A2400DCDCAC /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBDBB0881C319A2400DCDCAC /* window.cpp */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,8 @@
 		CB1856621C3195E7000F882B /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		CB1856631C3195E7000F882B /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		CB1856641C3195E7000F882B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		CB5EA82E1C33F66800FDA0CA /* base_texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base_texture.h; sourceTree = "<group>"; };
+		CB5EA82F1C33FA1300FDA0CA /* base_texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base_texture.cpp; sourceTree = "<group>"; };
 		CB649F741C31CFCB004395D4 /* background.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = background.h; sourceTree = "<group>"; };
 		CB649F761C31D011004395D4 /* background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = background.cpp; sourceTree = "<group>"; };
 		CB649F7A1C31D5E7004395D4 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 			children = (
 				CB649F741C31CFCB004395D4 /* background.h */,
 				CB649F761C31D011004395D4 /* background.cpp */,
+				CB5EA82E1C33F66800FDA0CA /* base_texture.h */,
+				CB5EA82F1C33FA1300FDA0CA /* base_texture.cpp */,
 			);
 			name = Texture;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB18565C1C319435000F882B /* main.cpp in Sources */,
+				CB5EA8301C33FA1300FDA0CA /* base_texture.cpp in Sources */,
 				CB649F781C31D011004395D4 /* background.cpp in Sources */,
 				CBDBB0891C319A2400DCDCAC /* window.cpp in Sources */,
 			);

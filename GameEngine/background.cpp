@@ -4,24 +4,8 @@
 using namespace Texture;
 using std::string;
 
-Background::Background() : mWidth(0), mHeight(0), mTexture(nullptr) {}
-Background::~Background()
-{
-    free();
-}
-
-void Background::free()
-{
-    SDL_DestroyTexture(mTexture);
-    mWidth = 0;
-    mHeight = 0;
-    mTexture = nullptr;
-}
-
-void Background::SetRenderer(SDL_Renderer* r)
-{
-    mRenderer = r;
-}
+Background::Background() {};
+Background::~Background() {};
 
 bool Background::Init()
 {
@@ -58,14 +42,4 @@ void Background::Render(int x, int y)
 {    
     SDL_Rect renderQuad = { x, y, mWidth, mHeight };
     SDL_RenderCopy(mRenderer, mTexture, nullptr, &renderQuad);
-}
-
-int Background::GetWidth() const
-{
-    return mWidth;
-}
-
-int Background::GetHeight() const
-{
-    return mHeight;
 }

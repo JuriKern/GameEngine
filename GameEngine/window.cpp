@@ -1,12 +1,12 @@
 #include "window.h"
 
-Window& Window::GetInstance()
+Window* Window::GetInstance()
 {
     static Window _instance;
-    return _instance;
+    return &_instance;
 }
 
-void Window::Free()
+void Window::free()
 {
     delete mBackground;
 
@@ -18,7 +18,10 @@ void Window::Free()
 
 Window::Window() : mName(&WINDOW_NAME), mWidth(&SCREEN_WIDTH), mHeight(&SCREEN_HEIGHT), mWindow(nullptr) {}
 
-Window::~Window() {}
+Window::~Window()
+{
+    free();
+}
 
 bool Window::Init()
 {

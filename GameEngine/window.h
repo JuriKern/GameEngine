@@ -19,11 +19,10 @@ using std::string;
 class Window
 {
 public:
-    static Window& GetInstance();
+    static Window* GetInstance();
     
     bool Init();
     void Loop();
-    void Free();
     
     bool LoadBackground();
     
@@ -32,6 +31,8 @@ protected:
     Window();
     
 private:
+    void free();
+    
     const string* mName;
     const int* mWidth;
     const int* mHeight;
